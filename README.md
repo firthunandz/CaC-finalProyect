@@ -1,18 +1,5 @@
 # ChallengeIntegrador-CodoACodo2023
 
-## Comisión nro: 23573
-
-Grupos nro 1 y 5.
-
-### Integrantes:
-
-- Adamo, Valeria Ximena.
-- Ayala, Bárbara.
-- Bidart, Mónica.
-- Chiesa, Fernando.
-- García, Fulvia.
-- Ezequiel.
-
 El objetivo de este proyecto es contar con un espacio autodidacta y
 auto gestionado que le permita al estudiante consolidar el proceso de
 aprendizaje de los temas vistos a lo largo de la cursada a través de la
