@@ -1,0 +1,100 @@
+<%- contentFor('body') %>
+ 
+
+    <!-- MAIN START -->
+     <main>
+      <section class="container_search">
+        <div class="img_search">
+          
+            <picture>
+              <img
+                src="../../img/icons/search_icon.svg"
+                alt="Ícono de búsqueda."
+              /> </picture
+          >
+        </div>
+        <div class="input_search">
+          <input
+            type="search"
+            name="search"
+            id="input_size"
+            placeholder="Código, nombre o categoría"
+          />
+        </div>
+      </section>
+      <section class="container_button">
+        <div>
+          <h2 class="ptitle ">Listado de productos</h2>
+        </div>
+        <div>  
+            <label class="letter3 mayus"> Agregar <a href="/admin/create"><button class="red_button3">+</button></a> </label>
+         </div> 
+        </section>  
+
+        </div>
+        <div>
+          <table class="table_admin">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Código</th>
+                <th>Nombre del Producto</th>
+                <th>Categoría</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% productos.forEach(producto => { %>
+              <tr>
+                <td><%= producto.id %></td>
+                <td><%= producto.skuItem %></td>
+                <td><%= producto.nombre %></td>
+                <td class="mayus"><%= producto.category %></td>
+                <td>
+                  <picture>
+                    <a href="/admin/edit/<%= producto.id %>">
+                      <img
+                        class="edit__icon"
+                        src="../../img/icons/edit_pencil.svg"
+                        alt="Ícono de lápiz de edición de items."
+                    /></a>
+                  </picture>
+                </td>
+                <td>
+                  <form class="form-delete" action="/admin/delete/<%= producto.id %>?_method=DELETE" method="post">
+                    <button type="submit">
+                      <picture>                        
+                          <img
+                            class="edit__icon"
+                            src="../../img/icons/delete_trash.svg"
+                            alt="Ícono de tacho de basura."
+                        />
+                      </picture>
+
+                    </button>
+                 
+                </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script>
+      document.addEventListener('click', (event) => {
+        if (event.target.closest("form").classList.contains("form-delete")) {
+          event.preventDefault();
+
+          const borrar = confirm("Seguro de Borrar?");
+
+          if(borrar) {
+            event.target.closest("form").submit();
+          }
+        }
+
+      })
+    </script>
+    <!-- MAIN END -->
+
+    
